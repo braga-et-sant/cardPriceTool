@@ -1,3 +1,4 @@
+import time
 from time import sleep
 
 from selenium import webdriver
@@ -26,7 +27,6 @@ def main(set):
     try:
         # Load the page
         treatset = set.replace("& ", "").replace(" ", "-").replace(":", "").replace("& ", "")
-        driver.get("https://www.google.com/search?q=" + treatset)
         url = "https://www.cardmarket.com/en/OnePiece/Products/Singles/" + treatset + "?idRarity=0&perSite=20&site="
         itemamount = scrapeCMGetPage.getItemAmount(url)
 
@@ -37,6 +37,7 @@ def main(set):
             urltreated = url + str(i)
             print("Treated URL:")
             print(urltreated)
+            sleep(0.1)
             listofsets.append(scrapeCMGetPage.main(urltreated))
 
 
@@ -44,6 +45,9 @@ def main(set):
 
     except Exception as e:
         print(f"An error occurred: {e}")
+        print("Error was inside scrapeCMGetAllPage. trying again in 200 seconds")
+        time.sleep(200)
+        main(set)
 
     finally:
         for i in listofsets:
