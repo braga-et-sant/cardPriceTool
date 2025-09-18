@@ -26,7 +26,15 @@ def main(set):
     finalist = []
     try:
         # Load the page
-        treatset = set.replace("& ", "").replace(" ", "-").replace(":", "").replace("& ", "")
+        treatset = set.replace("& ", "").replace(" ", "-").replace(":", "").replace("& ", "").replace(".", "").replace("(Pre-Errata)","Pre-Errata")
+        if treatset == "Ultra Deck The Three Brothers":
+            treatset = "Ultimate-Deck-The-Three-Brothers"
+        if treatset == "Starter-Deck-Green-Jewelry-Bonney":
+            treatset = "Starter-Deck-Green-Jewlery-Bonney"
+        if treatset == "Starter-Deck-EX-Gear-5":
+            treatset = "Ultra-Deck-EX-Gear-5"
+        if treatset == "Special-Tournament-Promos":
+            treatset = "Special-Tournaments-Promos"
         url = "https://www.cardmarket.com/en/OnePiece/Products/Singles/" + treatset + "?idRarity=0&perSite=20&site="
         itemamount = scrapeCMGetPage.getItemAmount(url)
 

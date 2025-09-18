@@ -32,11 +32,13 @@ def main():
             except Exception as e:
                 print("Definitive error. Skipping set")
 
-
+        print("wrote a set")
         print("Printing cards:")
         print(cards)
+        if set == setlist[index]:
+            break
         index = scrapeCMGetPricesOfPage.main(cards, ws, wb, index) + 1
-    print("wrote a set")
+    print("All done")
 
 
 if __name__=="__main__":

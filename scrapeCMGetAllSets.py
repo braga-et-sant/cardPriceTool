@@ -28,7 +28,7 @@ def main(cardgame):
         option_list = select.options
 
         for content in option_list[1:]:
-            if not "(Non-English)" in content.text and not "(Japanese)" in content.text:
+            if not "(Non-English)" in content.text and not "(Japanese)" and not "(Non English)" in content.text:
                 setlist.append(content.text)
 
     except Exception as e:
