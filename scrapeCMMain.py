@@ -1,3 +1,4 @@
+import time
 
 from xlwt import Workbook
 
@@ -20,7 +21,17 @@ def main():
     for set in setlist:
         print("Printings Set:")
         print(set)
-        cards = scrapeCMGetAllPages.main(set) #.replace(" ", "-").replace(":", ""))
+        try:
+            cards = scrapeCMGetAllPages.main(set) #.replace(" ", "-").replace(":", ""))
+        except Exception as e:
+            print(e)
+            print("Error printing set. Possibly 503. Waiting three minutes then trying again")
+            time.sleep(200)
+            try:
+                cards = scrapeCMGetAllPages.main(set)
+            except Exception as e:
+                print("Definitive error. Skipping set")
+
 
         print("Printing cards:")
         print(cards)
