@@ -35,7 +35,7 @@ def main():
         print("wrote a set")
         print("Printing cards:")
         print(cards)
-        if set == setlist[index]:
+        if set == setlist[len(setlist)-1]:
             break
         index = scrapeCMGetPricesOfPage.main(cards, ws, wb, index) + 1
     print("All done")
