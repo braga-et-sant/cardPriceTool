@@ -24,9 +24,16 @@ def main(urlbase):
     driver.get(url)
 
     # Wait for the table-body to load
-    table_body = WebDriverWait(driver, 10).until(
-        EC.presence_of_element_located((By.CLASS_NAME, "table-body"))
-    )
+    try:
+        table_body = WebDriverWait(driver, 10).until(
+            EC.presence_of_element_located((By.CLASS_NAME, "table-body"))
+        )
+    except Exception as e:
+        print(e)
+        print("Couldn't get card body, skipping")
+        driver.quit()
+        return ["N/A", "N/A", 0]
+
     #print("Found table body")
 
     # Get the first div inside table-body
