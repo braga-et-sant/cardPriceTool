@@ -31,13 +31,16 @@ ScrapeLigaTable - In construction, intended to handle the difference in structur
 
 Example usage: 
 
->----Get all one piece card prices from both sites
->run onePiece() scrape scrapeCMMain.py then onePieceLiga() from scrapeLigaMain.py
->
->
->----Get all prices of cards of EB02 from One piece in Cardmarket
->run print(main("Anime-25th-Collection")) in scrapeCMGetAllPages. You can find most available sets in the OPTCGSETS lists inside scrapeCMMain.py. Just change the string in quotes to another one to try other sets
->
->
->----Get all prices of cards of EB02 from One Piece in LigaYGO
->run  print(main(https://www.ligaonepiece.com.br/?view=cards%2Fsearch&card=+ed%3DEB02&tipo=1)) in scrapeLigaTable.py. You need the actual URL from liga for now since they handle the editions page a bit weirdly, but you can nab any URL after clicking in any given set [here](https://www.ligaonepiece.com.br/?view=cards/edicoes):
+-Get all one piece card prices from both sites
+
+-------->run onePiece() scrape scrapeCMMain.py then onePieceLiga() from scrapeLigaMain.py
+
+
+-Get all prices of cards of EB02 from One piece in Cardmarket
+
+-------->run print(main("Anime-25th-Collection")) in scrapeCMGetAllPages. You can find most available sets in the OPTCGSETS lists inside scrapeCMMain.py. Just change the string in quotes to another one to try other sets
+
+
+-Get all prices of cards of EB02 from One Piece in LigaYGO
+
+-------->run  print(main(https://www.ligaonepiece.com.br/?view=cards%2Fsearch&card=+ed%3DEB02&tipo=1)) in scrapeLigaTable.py. You need the actual URL from liga for now since they handle the editions page a bit weirdly, but you can nab any URL after clicking in any given set [here](https://www.ligaonepiece.com.br/?view=cards/edicoes):
