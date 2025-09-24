@@ -44,3 +44,6 @@ def main(url):
     finally:
         driver.quit()
     return linklist
+
+if __name__ == "__main__":
+    print(main("https://www.ligaonepiece.com.br/?view=cards/search&card=edid=61%20ed=OP-12"))

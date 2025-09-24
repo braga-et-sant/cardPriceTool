@@ -94,7 +94,7 @@ def onePiece():
     ws.write(0, 1, 'Card Name')
     ws.write(0, 2, 'Price')
     wb.save('cardmarketOP.xls')
-    setlist = scrapeCMGetAllSets.main("OnePiece")
+    setlist = OPTCGSETS
     print("Printing Setlist:")
     print(setlist)
     for set in setlist:
@@ -152,4 +152,4 @@ def pokemon():
     print("All done")
 
 if __name__=="__main__":
-    pass
+    onePiece()

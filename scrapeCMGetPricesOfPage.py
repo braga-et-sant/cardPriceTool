@@ -11,7 +11,13 @@ def main(pageList, sheet, book, index):
     print(pageList)
     for i in pageList:
         print(i)
-        value = (scrapeCMsingle.main(i))
+        try:
+            value = (scrapeCMsingle.main(i))
+        except Exception as e:
+            print(e)
+            print("failed getting card value")
+            return (index+1)
+
         sleep(0.11)
         namesetprice.append(value)
         print("Writing to sheet:")

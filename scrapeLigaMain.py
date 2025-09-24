@@ -27,7 +27,7 @@ PTCGSETCODES = [
     "343%20ed=SV1"
 ]
 
-def scrapeAllOPTCG():
+def onePieceLiga():
     wb = Workbook()
     ws = wb.add_sheet("Prices")
     ws.write(0, 0, 'Set Code')
@@ -59,7 +59,11 @@ def scrapeAllPTCG():
     setlist = PTCGSETCODES
     for set in setlist:
         url = "https://www.ligapokemon.com.br/?view=cards/search&card=edid=" + set
+        print(url)
+        print(set)
         prices = scrapeLigaTable.main(set)
+        print("Prices:")
+        print(prices)
         for p in prices:
             for item in p:
                 ws.write(columnc, rowc, item)
@@ -72,4 +76,4 @@ def scrapeAllPTCG():
 
 
 if __name__=="__main__":
-    pass
+    onePieceLiga()

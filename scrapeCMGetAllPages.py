@@ -27,7 +27,7 @@ def main(set):
     try:
         # Load the page
         treatset = set.replace("& ", "").replace(" ", "-").replace(":", "").replace("& ", "").replace(".", "").replace("(Pre-Errata)","Pre-Errata")
-        if treatset == "Ultra Deck The Three Brothers":
+        if treatset == "Ultra-Deck-The-Three-Brothers":
             treatset = "Ultimate-Deck-The-Three-Brothers"
         if treatset == "Starter-Deck-Green-Jewelry-Bonney":
             treatset = "Starter-Deck-Green-Jewlery-Bonney"
